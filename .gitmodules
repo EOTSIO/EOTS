@@ -1,0 +1,29 @@
+[submodule "libraries/chainbase"]
+	path = libraries/chainbase
+	url = https://github.com/eotio/chainbase
+        ignore = dirty
+[submodule "libraries/appbase"]
+	path = libraries/appbase
+	url = https://github.com/eotio/appbase
+        ignore = dirty
+[submodule "programs/snapshot"]
+	path = programs/snapshot
+	url = https://github.com/eotIO/genesis.git
+[submodule "contracts/musl/upstream"]
+	path = contracts/musl/upstream
+	url = https://github.com/eotIO/musl.git
+	branch = eotio
+[submodule "contracts/libc++/upstream"]
+	path = contracts/libc++/upstream
+	url = https://github.com/eotIO/libcxx.git
+	branch = eotio
+[submodule "externals/binaryen"]
+	path = externals/binaryen
+	url = https://github.com/eotIO/binaryen
+
+[submodule "libraries/softfloat"]
+	path = libraries/softfloat
+	url = https://github.com/eotio/berkeley-softfloat-3
+[submodule "externals/magic_get"]
+	path = externals/magic_get
+	url = https://github.com/eotIO/magic_get

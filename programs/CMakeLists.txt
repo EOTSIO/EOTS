@@ -1,0 +1,6 @@
+add_subdirectory( nodeot )
+add_subdirectory( cleot )
+add_subdirectory( keotd )
+add_subdirectory( eotio-launcher )
+add_subdirectory( eotio-applesedemo )
+add_subdirectory( eotio-abigen )

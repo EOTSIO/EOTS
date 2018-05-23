@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  builder:
+    build:
+      context: builder
+    image: eotio/builder
+
+  nodeotd:
+    build:
+      context: .
+    image: eotio/eot
+    command: /opt/eotio/bin/nodeotd.sh --data-dir /opt/eotio/bin/data-dir
+    hostname: nodeotd
+    ports:
+      - 8888:8888
+      - 9876:9876
+    expose:
+      - "8888"
+    volumes:
+      - nodeot-data-volume:/opt/eotio/bin/data-dir
+
+  keotd:
+    image: eotio/eot
+    command: /opt/eotio/bin/keotd --wallet-dir /opt/eotio/bin/data-dir
+    hostname: keotd
+    links:
+      - nodeotd
+    volumes:
+      - keotd-data-volume:/opt/eotio/bin/data-dir
+
+volumes:
+  nodeot-data-volume:
+    external: true
+  keotd-data-volume:
+    external: true

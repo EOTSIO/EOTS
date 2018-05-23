@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:latest
+    hostname: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data-volume:/data/db
+
+  nodeotd:
+    image: eotio/eot:latest
+    command: /opt/eotio/bin/nodeotd.sh --data-dir /opt/eotio/bin/data-dir --resync #--mongodb-uri mongodb://mongo:27017/eot
+    hostname: nodeotd
+    links:
+      - mongo
+    ports:
+      - 8888:8888
+      - 9876:9876
+    expose:
+      - "8888"
+    volumes:
+      - nodeot-data-volume:/opt/eotio/bin/data-dir
+
+  keotd:
+    image: eotio/eot:latest
+    command: /opt/eotio/bin/keotd --wallet-dir /opt/eotio/bin/data-dir --http-server-address=127.0.0.1:8900
+    hostname: keotd
+    links:
+      - nodeotd
+    volumes:
+      - keotd-data-volume:/opt/eotio/bin/data-dir
+
+volumes:
+ mongo-data-volume:
+   external: true
+ nodeot-data-volume:
+   external: true
+ keotd-data-volume:
+   external: true
