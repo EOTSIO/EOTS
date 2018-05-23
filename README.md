@@ -3,7 +3,7 @@
 
 Welcome to the EOT source code repository!  EOT software enables developers to create and deploy high-performance, horizontally scalable, blockchain infrastructure upon which decentralized applications can be built.
 
-We are prepared to issue a total of 270 million coins.
+We are preparing to issue a total of 270 million coins, the date of release is July 19, 2018.
 
 This code is currently beta-quality and under rapid development. That said, there is plenty early experimenters can do. This includes running a private multi-node test network and developing applications (smart contracts).
 
