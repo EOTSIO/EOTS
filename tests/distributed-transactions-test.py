@@ -70,14 +70,14 @@ try:
 
         Print("Stand up cluster")
         if cluster.launch(pnodes, total_nodes, topo=topo, delay=delay) is False:
-            errorExit("Failed to stand up eot cluster.")
+            errorExit("Failed to stand up EOTS cluster.")
 
         Print ("Wait for Cluster stabilization")
         # wait for cluster to start producing blocks
         if not cluster.waitOnClusterBlockNumSync(3):
             errorExit("Cluster never stabilized")
 
-    Print("Stand up eot wallet keotd")
+    Print("Stand up EOTS wallet keotd")
     walletMgr.killall()
     walletMgr.cleanup()
     if walletMgr.launch() is False:

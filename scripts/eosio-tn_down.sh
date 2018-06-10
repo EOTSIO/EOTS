@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # eotio-tn_down.sh is used by the eotio-tn_bounce.sh and eotio-tn_roll.sh scripts.
-# It is intended to terminate specific eot.IO daemon processes.
+# It is intended to terminate specific EOTS.IO daemon processes.
 #
 
 

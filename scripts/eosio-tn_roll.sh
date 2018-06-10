@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# eotio-tn_roll is used to have all of the instances of the eot daemon on a host brought down
+# eotio-tn_roll is used to have all of the instances of the EOTS daemon on a host brought down
 # so that the underlying executable image file (the "text file") can be replaced. Then
 # all instances are restarted.
 # usage: eotio-tn_roll.sh [arglist]
@@ -59,7 +59,7 @@ if [ \( -z "$prog" \) -o \( -z "$RD" \) ]; then
     exit 1
 fi
 
-SDIR=staging/eot
+SDIR=staging/EOTS
 if [ ! -e $SDIR/$RD/$prog ]; then
     echo $SDIR/$RD/$prog does not exist
     exit 1

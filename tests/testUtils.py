@@ -537,7 +537,7 @@ class Node(object):
 
     # Create & initialize account and return creation transactions. Return transaction json object
     def createInitializeAccount(self, account, creatorAccount, stakedDeposit=1000, waitForTransBlock=False):
-        cmd='%s %s system newaccount -j %s %s %s %s --stake-net "100 %s" --stake-cpu "100 %s" --buy-ram-eot "100 %s"' % (
+        cmd='%s %s system newaccount -j %s %s %s %s --stake-net "100 %s" --stake-cpu "100 %s" --buy-ram-EOTS "100 %s"' % (
             Utils.eotClientPath, self.endpointArgs, creatorAccount.name, account.name,
             account.ownerPublicKey, account.activePublicKey,
             CORE_SYMBOL, CORE_SYMBOL, CORE_SYMBOL)
@@ -1298,11 +1298,11 @@ class Cluster(object):
         """Cluster container.
         walletd [True|False] Is wallet keotd running. If not load the wallet plugin
         localCluster [True|False] Is cluster local to host.
-        host: eot server host
-        port: eot server port
-        walletHost: eot wallet host
+        host: EOTS server host
+        port: EOTS server port
+        walletHost: EOTS wallet host
         walletPort: wos wallet port
-        enableMongo: Include mongoDb support, configures eot mongo plugin
+        enableMongo: Include mongoDb support, configures EOTS mongo plugin
         mongoHost: MongoDB host
         mongoPort: MongoDB port
         defproduceraPrvtKey: Defproducera account private key
@@ -1630,7 +1630,7 @@ class Cluster(object):
         node=self.nodes[0]
         fromm=source
         to=accounts[0]
-        Utils.Print("Transfer %s units from account %s to %s on eot server port %d" % (
+        Utils.Print("Transfer %s units from account %s to %s on EOTS server port %d" % (
             transferAmountStr, fromm.name, to.name, node.port))
         trans=node.transferFunds(fromm, to, transferAmountStr)
         assert(trans)
@@ -1667,7 +1667,7 @@ class Cluster(object):
             transferAmountStr=Node.currencyIntToStr(transferAmount, CORE_SYMBOL)
             fromm=account
             to=accounts[i+1] if i < (count-1) else source
-            Utils.Print("Transfer %s units from account %s to %s on eot server port %d." %
+            Utils.Print("Transfer %s units from account %s to %s on EOTS server port %d." %
                     (transferAmountStr, fromm.name, to.name, node.port))
 
             trans=node.transferFunds(fromm, to, transferAmountStr)
@@ -1706,7 +1706,7 @@ class Cluster(object):
                                         (Utils.eotServerName, node.port))
 
             if node.validateFunds(initialBalances, transferAmount, source, accounts) is False:
-                Utils.Print("ERROR: Failed to validate funds on eot node port: %d" % (node.port))
+                Utils.Print("ERROR: Failed to validate funds on EOTS node port: %d" % (node.port))
                 return False
 
         return True
@@ -2109,7 +2109,7 @@ class Cluster(object):
 
         return nodes
 
-    # Kills a percentange of eot instances starting from the tail and update eotInstanceInfos state
+    # Kills a percentange of EOTS instances starting from the tail and update eotInstanceInfos state
     def killSomeeotInstances(self, killCount, killSignalStr=Utils.SigKillTag):
         killSignal=signal.SIGKILL
         if killSignalStr == Utils.SigTermTag:
@@ -2165,13 +2165,13 @@ class Cluster(object):
         cmd="%s -k 15" % (Utils.eotLauncherPath)
         if Utils.Debug: Utils.Print("cmd: %s" % (cmd))
         if 0 != subprocess.call(cmd.split(), stdout=Utils.FNull):
-            if not silent: Utils.Print("Launcher failed to shut down eot cluster.")
+            if not silent: Utils.Print("Launcher failed to shut down EOTS cluster.")
 
-        # ocassionally the launcher cannot kill the eot server
+        # ocassionally the launcher cannot kill the EOTS server
         cmd="pkill -9 %s" % (Utils.eotServerName)
         if Utils.Debug: Utils.Print("cmd: %s" % (cmd))
         if 0 != subprocess.call(cmd.split(), stdout=Utils.FNull):
-            if not silent: Utils.Print("Failed to shut down eot cluster.")
+            if not silent: Utils.Print("Failed to shut down EOTS cluster.")
 
         # another explicit nodes shutdown
         for node in self.nodes:

@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #pragma once
 #include <eotiolib/transaction.h>
@@ -86,4 +86,4 @@ namespace eotio {
 
    ///@} transactioncpp api
 
-} // namespace eot
+} // namespace EOTS

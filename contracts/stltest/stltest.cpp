@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 // include entire libc
 #include <alloca.h>
@@ -135,7 +135,7 @@
 #include <string>
 #include <stdexcept>
 */
-//include <eotiolib/eot.hpp>
+//include <eotiolib/EOTS.hpp>
 #include <eotiolib/dispatcher.hpp>
 
 using namespace eotio;

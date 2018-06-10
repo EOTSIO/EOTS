@@ -1058,7 +1058,7 @@ BOOST_FIXTURE_TEST_CASE(eotio_abi, TESTER) try {
    auto result = push_transaction( trx );
 
    fc::variant pretty_output;
-   // verify to_variant works on eot native contract type: newaccount
+   // verify to_variant works on EOTS native contract type: newaccount
    // see abi_serializer::to_abi()
    abi_serializer::to_variant(*result, pretty_output, get_resolver());
 

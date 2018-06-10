@@ -1,6 +1,6 @@
 /**
  * @file action_test.cpp
- * @copyright defined in eot/LICENSE.txt
+ * @copyright defined in EOTS/LICENSE.txt
  */
 #include <eotiolib/action.hpp>
 #include <eotiolib/transaction.hpp>

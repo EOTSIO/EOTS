@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 
 #include <boost/test/unit_test.hpp>

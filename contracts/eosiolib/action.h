@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #pragma once
 #include <eotiolib/system.h>
@@ -19,7 +19,7 @@ extern "C" {
     * @brief Define API for querying action properties
     *
     *
-    * A eot.IO action has the following abstract structure:
+    * A EOTS.IO action has the following abstract structure:
     *
     * ```
     *   struct action {
@@ -36,7 +36,7 @@ extern "C" {
     * @code
     * // Assume this action is used for the following examples:
     * // {
-    * //  "code": "eot",
+    * //  "code": "EOTS",
     * //  "type": "transfer",
     * //  "authorization": [{ "account": "inita", "permission": "active" }],
     * //  "data": {

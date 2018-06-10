@@ -46,13 +46,13 @@ Cleot usage example.
 
 Prerequisites:
    - eotio.token contract installed to eotio.token accountm, eotio.msig contract installed on eotio.msig account which is a priviliged account.
-   - account 'treasury' is the issuer of eot token.
+   - account 'treasury' is the issuer of EOTS token.
    - account 'tester' exists.
    - keys to accounts 'treasury' and 'tester' imported into local wallet, the wallet is unlocked.
 
 One user creates a proposal:
 ````
-$ cleot multisig propose test '[{"actor": "treasury", "permission": "active"}]' '[{"actor": "treasury", "permission": "active"}]' eotio.token issue '{"to": "tester", "quantity": "1000.0000 eot", "memo": ""}' -p tester
+$ cleot multisig propose test '[{"actor": "treasury", "permission": "active"}]' '[{"actor": "treasury", "permission": "active"}]' eotio.token issue '{"to": "tester", "quantity": "1000.0000 EOTS", "memo": ""}' -p tester
 executed transaction: e26f3a3a7cba524a7b15a0b6c77c7daa73d3ba9bf84e83f9c2cdf27fcb183d61  336 bytes  107520 cycles
 #    eotio.msig <= eotio.msig::propose          {"proposer":"tester","proposal_name":"test","requested":[{"actor":"treasury","permission":"active"}]...
 ````
@@ -88,7 +88,7 @@ $ cleot multisig review tester test -p treasury
         ],
         "data": {
           "to": "tester",
-          "quantity": "1000.0000 eot",
+          "quantity": "1000.0000 EOTS",
           "memo": ""
         },
         "hex_data": "000000005c95b1ca809698000000000004454f530000000000"

@@ -1,10 +1,10 @@
-# eot Testnet
-To date, all work done to experiment with the eot blockchain has been performed using a single instance of eotd hosting all 21 block producers. While this is a perfectly valid solution for validating features of the blockchain, developing new contracts, or whatever, it does not scale. Nor does it expose the sort of issues raised when contract and block data must be shared across multiple instances. Providing the ability to scale involves deploying multiple eotd nodes across many hosts and lining then into a peer-to-peer (p2p) network. Composing this network involves tailoring and distributing configuration files, coordinating starts and stops and other tasks.
+# EOTS Testnet
+To date, all work done to experiment with the EOTS blockchain has been performed using a single instance of eotd hosting all 21 block producers. While this is a perfectly valid solution for validating features of the blockchain, developing new contracts, or whatever, it does not scale. Nor does it expose the sort of issues raised when contract and block data must be shared across multiple instances. Providing the ability to scale involves deploying multiple eotd nodes across many hosts and lining then into a peer-to-peer (p2p) network. Composing this network involves tailoring and distributing configuration files, coordinating starts and stops and other tasks.
 
 Doing this manually is a tedious task and easily error prone. Fortunately a solution is provided, in the form of the Launcher application, described below.
 
 ## Testnet nodes, networks, and topology
-Before getting into the details of the eot testnet, lets clarify some terms. In this document I use the terms "host" and "machine" fairly interchangeably. A host generally boils down to a single IP address, although in practice it could have more.
+Before getting into the details of the EOTS testnet, lets clarify some terms. In this document I use the terms "host" and "machine" fairly interchangeably. A host generally boils down to a single IP address, although in practice it could have more.
 
 The next term is "node." A node is an instance of the eotd executable configured to serve as 0 or more producers. There is not a one-to-one mapping between nodes and hosts, a host may serve more than one node, but one node cannot span more than one host. 
 
@@ -32,11 +32,11 @@ Network topology or "shape" describes how the nodes are connected in order to sh
 The Launcher has definitions of two basic different network "shapes" based on inter-nodal connections, which can be selected by a command line option. If you wish to create your own custom network topology, you can do so by supplying a json formatted file. This file is typically the edited version of the template created by the launcher in "output" mode.
 
 #### Star network
-![](https://github.com/eotIO/eot/raw/master/star.png)
+![](https://github.com/eotIO/EOTS/raw/master/star.png)
 A "star" is intended to support a larger number of nodes in the testnet. In this case the number of peers connected to a node and the distribution of those nodes varies based on the number of nodes in the network.
 
 #### Mesh network
-![](https://github.com/eotIO/eot/raw/master/mesh.png)
+![](https://github.com/eotIO/EOTS/raw/master/mesh.png)
 In a "mesh" network, each node is connected to as many peer nodes as possible.
 
 #### Custom network shape
@@ -116,7 +116,7 @@ The ssh helper fields are paths to ssh and scp, an identity if necessary, and an
         "remote": true,
         "ssh_identity": "",
         "ssh_args": "",
-        "eot_root_dir": "/home/phil/blockchain/eot",
+        "eot_root_dir": "/home/phil/blockchain/EOTS",
         "data_dir": "tn_data_0",
         "hostname": "remoteserv",
         "public_name": "remoteserv",
@@ -184,7 +184,7 @@ This table describes all of the key/value pairs used in the testnet.json file.
 ### Provisioning Distributed Servers
 The ssh_helper section of the testnet.json file contains the ssh elements necessary to connect and issue commands to other servers. In addition to the ssh_helper section which provides access to global configuration settings, the per-node configuration may provide overriding identity and connection arguments.
 
-It is also necessary to provision the server by at least copying the eotd executable, and the genesis.json files to their appropriate locations relative to some named eot root directory. For example, I defined the eot root to be `/home/phil/blockchain/eot`. When run, the launcher will run through a variety of shell commands using ssh and finally using scp to copy a config.ini file to the appropriate data directory on the remote.
+It is also necessary to provision the server by at least copying the eotd executable, and the genesis.json files to their appropriate locations relative to some named EOTS root directory. For example, I defined the EOTS root to be `/home/phil/blockchain/EOTS`. When run, the launcher will run through a variety of shell commands using ssh and finally using scp to copy a config.ini file to the appropriate data directory on the remote.
 
 ## Runtime Artifacts
 The launcher app creates a separate date and configuration directory for each node instance. This directory is named `tn_data_<n>` with n ranging from 0 to the number of nodes being launched. 

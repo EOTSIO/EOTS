@@ -316,13 +316,13 @@ BOOST_FIXTURE_TEST_CASE(test_symbol, TESTER) try {
 
    // invalid - contains lower case characters, no validation
    {
-      BOOST_CHECK_EXCEPTION(symbol malformed(SY(6,eot)),
-                            fc::assert_exception, fc_assert_exception_message_is("invalid symbol: eot"));
+      BOOST_CHECK_EXCEPTION(symbol malformed(SY(6,EOTS)),
+                            fc::assert_exception, fc_assert_exception_message_is("invalid symbol: EOTS"));
    }
 
    // invalid - contains lower case characters, exception thrown
    {
-      BOOST_CHECK_EXCEPTION(symbol(5,"eot"),
+      BOOST_CHECK_EXCEPTION(symbol(5,"EOTS"),
                             fc::assert_exception, fc_assert_exception_message_is("invalid character in symbol name"));
    }
 

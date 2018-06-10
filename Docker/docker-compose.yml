@@ -9,7 +9,7 @@ services:
   nodeotd:
     build:
       context: .
-    image: eotio/eot
+    image: eotio/EOTS
     command: /opt/eotio/bin/nodeotd.sh --data-dir /opt/eotio/bin/data-dir
     hostname: nodeotd
     ports:
@@ -21,7 +21,7 @@ services:
       - nodeot-data-volume:/opt/eotio/bin/data-dir
 
   keotd:
-    image: eotio/eot
+    image: eotio/EOTS
     command: /opt/eotio/bin/keotd --wallet-dir /opt/eotio/bin/data-dir
     hostname: keotd
     links:

@@ -10,8 +10,8 @@ services:
       - mongo-data-volume:/data/db
 
   nodeotd:
-    image: eotio/eot:latest
-    command: /opt/eotio/bin/nodeotd.sh --data-dir /opt/eotio/bin/data-dir --resync #--mongodb-uri mongodb://mongo:27017/eot
+    image: eotio/EOTS:latest
+    command: /opt/eotio/bin/nodeotd.sh --data-dir /opt/eotio/bin/data-dir --resync #--mongodb-uri mongodb://mongo:27017/EOTS
     hostname: nodeotd
     links:
       - mongo
@@ -24,7 +24,7 @@ services:
       - nodeot-data-volume:/opt/eotio/bin/data-dir
 
   keotd:
-    image: eotio/eot:latest
+    image: eotio/EOTS:latest
     command: /opt/eotio/bin/keotd --wallet-dir /opt/eotio/bin/data-dir --http-server-address=127.0.0.1:8900
     hostname: keotd
     links:

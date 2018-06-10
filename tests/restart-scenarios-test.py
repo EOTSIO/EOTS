@@ -80,7 +80,7 @@ try:
 
     Print("Stand up cluster")
     if cluster.launch(pnodes, total_nodes, topo=topo, delay=delay) is False:
-        errorExit("Failed to stand up eot cluster.")
+        errorExit("Failed to stand up EOTS cluster.")
 
     Print ("Wait for Cluster stabilization")
     # wait for cluster to start producing blocks
@@ -125,7 +125,7 @@ try:
 
     Print("Kill %d cluster node instances." % (killCount))
     if cluster.killSomeeotInstances(killCount, killSignal) is False:
-        errorExit("Failed to kill eot instances")
+        errorExit("Failed to kill EOTS instances")
     Print("nodeot instances killed.")
 
     # TBD: Known issue (Issue 2043) that 'get currency0000 balance' doesn't return balance.
@@ -140,7 +140,7 @@ try:
 
     Print ("Relaunch dead cluster nodes instances.")
     if cluster.relauncheotInstances() is False:
-        errorExit("Failed to relaunch eot instances")
+        errorExit("Failed to relaunch EOTS instances")
     Print("nodeot instances relaunched.")
 
     Print ("Resyncing cluster nodes.")

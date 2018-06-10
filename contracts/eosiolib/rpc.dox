@@ -37,9 +37,9 @@ Before you can query `eotd` you must first enable the necessary API plugin(s). D
 plugin = eotio::chain_api_plugin // Enable Chain API
 plugin = eotio::wallet_api_plugin // Enable Wallet API
 ```
-Alternatively, for Wallet API, you can also have the wallet functionality separate from `eotd`, by running `eot-walletd` separately.
+Alternatively, for Wallet API, you can also have the wallet functionality separate from `eotd`, by running `EOTS-walletd` separately.
 
-For the following guide, we will assume that we have `eotd` running on `127.0.0.1:8888` (Chain API Plugin enabled, Wallet API Plugin disabled) and `eot-walletd` running on `127.0.0.1:8889`.
+For the following guide, we will assume that we have `eotd` running on `127.0.0.1:8888` (Chain API Plugin enabled, Wallet API Plugin disabled) and `EOTS-walletd` running on `127.0.0.1:8889`.
 
 ===
 
@@ -111,9 +111,9 @@ $ curl  http://127.0.0.1:8888/v1/chain/get_account -X POST -d '{"account_name":"
 ```
 {
   "name": "inita",
-  "eot_balance": "999998.9574 eot",
-  "staked_balance": "0.0000 eot",
-  "unstaking_balance": "0.0000 eot",
+  "eot_balance": "999998.9574 EOTS",
+  "staked_balance": "0.0000 EOTS",
+  "unstaking_balance": "0.0000 EOTS",
   "last_unstaking_time": "2106-02-07T06:28:15",
   "permissions": [
     {

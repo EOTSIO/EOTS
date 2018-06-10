@@ -4,10 +4,10 @@ machine:
 
 dependencies:
   override:
-    - cd ~/eot && docker build -t eotio/eot -f Docker/Dockerfile .
+    - cd ~/EOTS && docker build -t eotio/EOTS -f Docker/Dockerfile .
 
 test:
   pre:
     - sleep 5
   override:
-    - docker run eotio/eot
+    - docker run eotio/EOTS

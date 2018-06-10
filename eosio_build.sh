@@ -1,7 +1,7 @@
 #!/bin/bash
 ##########################################################################
 # This is the eotIO automated install script for Linux and Mac OS.
-# This file was downloaded from https://github.com/eotIO/eot
+# This file was downloaded from https://github.com/eotIO/EOTS
 #
 # Copyright (c) 2017, Respective Authors all rights reserved.
 #
@@ -27,7 +27,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# https://github.com/eotIO/eot/blob/master/LICENSE.txt
+# https://github.com/eotIO/EOTS/blob/master/LICENSE.txt
 ##########################################################################
 
 	CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -99,8 +99,8 @@
 
 	if [ ! -d .git ]; then
 		printf "\\n\\tThis build script only works with sources cloned from git\\n"
-		printf "\\tPlease clone a new eot directory with 'git clone https://github.com/eotIO/eot --recursive'\\n"
-		printf "\\tSee the wiki for instructions: https://github.com/eotIO/eot/wiki\\n"
+		printf "\\tPlease clone a new EOTS directory with 'git clone https://github.com/eotIO/EOTS --recursive'\\n"
+		printf "\\tSee the wiki for instructions: https://github.com/eotIO/EOTS/wiki\\n"
 		exit 1
 	fi
 
@@ -257,26 +257,26 @@
 	print_instructions
 
 	printf "\\tFor more information:\\n"
-	printf "\\teotIO website: https://eot.io\\n"
+	printf "\\teotIO website: https://EOTS.io\\n"
 	printf "\\teotIO Telegram channel @ https://t.me/eotProject\\n"
-	printf "\\teotIO resources: https://eot.io/resources/\\n"
-	printf "\\teotIO wiki: https://github.com/eotIO/eot/wiki\\n\\n\\n"
+	printf "\\teotIO resources: https://EOTS.io/resources/\\n"
+	printf "\\teotIO wiki: https://github.com/eotIO/EOTS/wiki\\n\\n\\n"
 				
 	if [ "x${eotIO_BUILD_PACKAGE}" != "x" ]; then
-	  # Build eot.io package
+	  # Build EOTS.io package
 		if ! "$CMAKE" -DCMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE}" -DCMAKE_CXX_COMPILER="${CXX_COMPILER}" \
 			-DCMAKE_C_COMPILER="${C_COMPILER}" -DWASM_ROOT="${WASM_ROOT}" \
 			-DOPENSSL_ROOT_DIR="${OPENSSL_ROOT_DIR}" -DCMAKE_INSTALL_PREFIX="/usr" ..
 		then
-			printf "\\n\\t>>>>>>>>>>>>>>>>>>>> CMAKE building eot.io package has exited with the above error.\\n\\n"
+			printf "\\n\\t>>>>>>>>>>>>>>>>>>>> CMAKE building EOTS.io package has exited with the above error.\\n\\n"
 			exit -1
 		fi
 
 		if ! make -j${CPU_CORE} VERBOSE=0 package
 		then
-			printf "\\n\\t>>>>>>>>>>>>>>>>>>>> MAKE building eot.io package has exited with the above error.\\n\\n"
+			printf "\\n\\t>>>>>>>>>>>>>>>>>>>> MAKE building EOTS.io package has exited with the above error.\\n\\n"
 			exit -1
 		fi
 
-		printf "\\n\\t>>>>>>>>>>>>>>>>>>>> eot.io package has been successfully built.\\n\\n"
+		printf "\\n\\t>>>>>>>>>>>>>>>>>>>> EOTS.io package has been successfully built.\\n\\n"
 	fi

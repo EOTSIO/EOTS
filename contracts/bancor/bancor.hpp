@@ -1,10 +1,10 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #pragma once
 
-#include <eotiolib/eot.hpp>
+#include <eotiolib/EOTS.hpp>
 #include <eotiolib/token.hpp>
 #include <eotiolib/reflect.hpp>
 #include <eotiolib/generic_currency.hpp>

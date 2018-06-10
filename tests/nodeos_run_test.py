@@ -97,7 +97,7 @@ try:
         Print("Stand up cluster")
         if cluster.launch(prodCount=prodCount, onlyBios=onlyBios, dontKill=dontKill) is False:
             cmdError("launcher")
-            errorExit("Failed to stand up eot cluster.")
+            errorExit("Failed to stand up EOTS cluster.")
     else:
         cluster.initializeNodes(defproduceraPrvtKey=defproduceraPrvtKey, defproducerbPrvtKey=defproducerbPrvtKey)
         killeotInstances=False
@@ -133,13 +133,13 @@ try:
     walletMgr.cleanup()
     if walletMgr.launch() is False:
         cmdError("%s" % (WalletdName))
-        errorExit("Failed to stand up eot walletd.")
+        errorExit("Failed to stand up EOTS walletd.")
 
     testWalletName="test"
     Print("Creating wallet \"%s\"." % (testWalletName))
     testWallet=walletMgr.create(testWalletName)
     if testWallet is None:
-        cmdError("eot wallet create")
+        cmdError("EOTS wallet create")
         errorExit("Failed to create wallet %s." % (testWalletName))
 
     Print("Wallet \"%s\" password=%s." % (testWalletName, testWallet.password.encode("utf-8")))
@@ -154,7 +154,7 @@ try:
     Print("Creating wallet \"%s\"." % (defproduceraWalletName))
     defproduceraWallet=walletMgr.create(defproduceraWalletName)
     if defproduceraWallet is None:
-        cmdError("eot wallet create")
+        cmdError("EOTS wallet create")
         errorExit("Failed to create wallet %s." % (defproduceraWalletName))
 
     defproduceraAccount=cluster.defproduceraAccount
@@ -436,7 +436,7 @@ try:
         abiActionName=account["abi"]["actions"][0]["name"]
         abiType=account["abi"]["actions"][0]["type"]
         if abiName != "transfer" or abiActionName != "transfer" or abiType != "transfer":
-            errorExit("FAILURE - get eot account failed", raw=True)
+            errorExit("FAILURE - get EOTS account failed", raw=True)
 
     Print("push create action to currency1111 contract")
     contract="currency1111"

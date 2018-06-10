@@ -517,7 +517,7 @@ BOOST_FIXTURE_TEST_CASE( stake_from_refund, eotio_system_tester ) try {
    BOOST_REQUIRE_EQUAL( core_from_string("210.0000"), total["cpu_weight"].as<asset>());
    refund = get_refund_request( "alice1111111" );
    BOOST_TEST_REQUIRE( refund.is_null() );
-   //200 eot should be taken from alice's account
+   //200 EOTS should be taken from alice's account
    BOOST_REQUIRE_EQUAL( core_from_string("500.0000"), get_balance( "alice1111111" ) );
 
 } FC_LOG_AND_RETHROW()
@@ -633,7 +633,7 @@ BOOST_FIXTURE_TEST_CASE( vote_for_producer, eotio_system_tester, * boost::unit_t
    BOOST_TEST_REQUIRE( stake2votes(core_from_string("88.8888")) == prod["total_votes"].as_double() );
 
    //carol1111111 unstakes part of the stake
-   BOOST_REQUIRE_EQUAL( success(), unstake( "carol1111111", core_from_string("2.0000"), core_from_string("0.0002")/*"2.0000 eot", "0.0002 eot"*/ ) );
+   BOOST_REQUIRE_EQUAL( success(), unstake( "carol1111111", core_from_string("2.0000"), core_from_string("0.0002")/*"2.0000 EOTS", "0.0002 EOTS"*/ ) );
 
    //should decrease alice1111111's total_votes
    prod = get_producer_info( "alice1111111" );
@@ -650,10 +650,10 @@ BOOST_FIXTURE_TEST_CASE( vote_for_producer, eotio_system_tester, * boost::unit_t
    //should decrease alice1111111's total_votes
    prod = get_producer_info( "alice1111111" );
    BOOST_TEST_REQUIRE( stake2votes(core_from_string("20.2220")) == prod["total_votes"].as_double() );
-   //but eot should still be at stake
+   //but EOTS should still be at stake
    BOOST_REQUIRE_EQUAL( core_from_string("1933.3334"), get_balance( "bob111111111" ) );
 
-   //carol1111111 unstakes rest of eot
+   //carol1111111 unstakes rest of EOTS
    BOOST_REQUIRE_EQUAL( success(), unstake( "carol1111111", core_from_string("20.0000"), core_from_string("0.2220") ) );
    //should decrease alice1111111's total_votes to zero
    prod = get_producer_info( "alice1111111" );
@@ -1596,7 +1596,7 @@ BOOST_FIXTURE_TEST_CASE(producers_upgrade_system_contract, eotio_system_tester) 
       msig_abi_ser.set_abi(msig_abi);
    }
 
-   //stake more than 15% of total eot supply to activate chain
+   //stake more than 15% of total EOTS supply to activate chain
    transfer( "eotio", "alice1111111", core_from_string("650000000.0000"), "eotio" );
    BOOST_REQUIRE_EQUAL( success(), stake( "alice1111111", "alice1111111", core_from_string("300000000.0000"), core_from_string("300000000.0000") ) );
 
@@ -2149,7 +2149,7 @@ BOOST_FIXTURE_TEST_CASE( elect_producers /*_and_parameters*/, eotio_system_teste
    BOOST_REQUIRE_EQUAL( success(), regproducer( "defproducer2", 2) );
    BOOST_REQUIRE_EQUAL( success(), regproducer( "defproducer3", 3) );
 
-   //stake more than 15% of total eot supply to activate chain
+   //stake more than 15% of total EOTS supply to activate chain
    transfer( "eotio", "alice1111111", core_from_string("600000000.0000"), "eotio" );
    BOOST_REQUIRE_EQUAL( success(), stake( "alice1111111", "alice1111111", core_from_string("300000000.0000"), core_from_string("300000000.0000") ) );
    //                                                           1000000000.0000

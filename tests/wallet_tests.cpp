@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #include <eotio/utilities/key_conversion.hpp>
 #include <eotio/utilities/rand.hpp>
@@ -197,4 +197,4 @@ BOOST_AUTO_TEST_CASE(wallet_manager_test)
 
 BOOST_AUTO_TEST_SUITE_END()
 
-} // namespace eot
+} // namespace EOTS

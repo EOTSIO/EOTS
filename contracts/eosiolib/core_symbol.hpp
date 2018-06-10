@@ -1,5 +1,5 @@
 /** @file 
- *    @copyright defined in eot/LICENSE.txt 
+ *    @copyright defined in EOTS/LICENSE.txt 
  *
  * \warning This file is machine generated. DO NOT EDIT.  See core_symbol.hpp.in for changes.
  */

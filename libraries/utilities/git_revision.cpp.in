@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <eot/utilities/git_revision.hpp>
+#include <EOTS/utilities/git_revision.hpp>
 
 #define eot_GIT_REVISION_SHA "@eot_GIT_REVISION_SHA@"
 #define eot_GIT_REVISION_UNIX_TIMESTAMP @eot_GIT_REVISION_UNIX_TIMESTAMP@

@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #pragma once
 #include <eotiolib/types.h>
@@ -11,7 +11,7 @@ extern "C" {
     * @ingroup contractdev
     * @brief Define API for sending transactions and inline messages
     *
-    * A eot.IO transaction has the following abstract structure:
+    * A EOTS.IO transaction has the following abstract structure:
     *
     * ```
     *   struct transaction {

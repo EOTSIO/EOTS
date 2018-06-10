@@ -11,10 +11,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>eot</find>
+      <find>EOTS</find>
     </findStrings>
     <dirStrings>
-      <dir>C:\Users\Admin\Desktop\eot-master\eot-master</dir>
+      <dir>C:\Users\Admin\Desktop\EOTS-master\EOTS-master</dir>
     </dirStrings>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -41,8 +41,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="eot-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eot-master" type="462c0819:PsiDirectoryNode" />
+              <item name="EOTS-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EOTS-master" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />

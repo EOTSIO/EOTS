@@ -1,11 +1,11 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
-#include <eot.hpp>
+#include <EOTS.hpp>
 
 /**
- *  The purpose of this contract is to implement something like Steem on eot, this
+ *  The purpose of this contract is to implement something like Steem on EOTS, this
  *  means this contract defines its own currency, allows people to create posts, vote
  *  on posts, and stake their voting power.
  *

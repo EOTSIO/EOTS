@@ -1,7 +1,7 @@
-# EOT - The Most Powerful Infrastructure for Decentralized Applications
+# EOTS - The Most Powerful Infrastructure for Decentralized Applications
 
 
-Welcome to the EOT source code repository!  EOT software enables developers to create and deploy high-performance, horizontally scalable, blockchain infrastructure upon which decentralized applications can be built.
+Welcome to the EOTS source code repository!  EOTS software enables developers to create and deploy high-performance, horizontally scalable, blockchain infrastructure upon which decentralized applications can be built.
 
 We are preparing to issue a total of 270 million coins, the date of release is July 19, 2018.
 
@@ -10,7 +10,7 @@ This code is currently beta-quality and under rapid development. That said, ther
 There is no public testnet running currently.
 
 ## Supported Operating Systems
-EOT currently supports the following operating systems:  
+EOTS currently supports the following operating systems:  
 1. Amazon 2017.09 and higher
 2. Centos 7
 3. Fedora 25 and higher (Fedora 27 recommended)

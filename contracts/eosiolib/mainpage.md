@@ -1,10 +1,10 @@
-Welcome to the eot.IO Documentation
+Welcome to the EOTS.IO Documentation
 -----------------------------------
 
-@note This documentation is in progress and subject to change due to rapid development. Please report inaccuracies identified to the [eot.IO Developer Telegram Group](https://t.me/joinchat/EaEnSUPktgfoI-XPfMYtcQ)
+@note This documentation is in progress and subject to change due to rapid development. Please report inaccuracies identified to the [EOTS.IO Developer Telegram Group](https://t.me/joinchat/EaEnSUPktgfoI-XPfMYtcQ)
 
-## eot.IO
- - [Additional resources - Github Readme](https://github.com/eotIO/eot#readme)
+## EOTS.IO
+ - [Additional resources - Github Readme](https://github.com/eotIO/EOTS#readme)
 
 ## Smart Contract Developers
 - @ref eotiorpc

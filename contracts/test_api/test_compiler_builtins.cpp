@@ -1,6 +1,6 @@
 /**
  *    @file test_compiler_builtins.cpp
- *    @copyright defined in eot/LICENSE.txt
+ *    @copyright defined in EOTS/LICENSE.txt
  */
 
 #include <eotiolib/eotio.hpp>

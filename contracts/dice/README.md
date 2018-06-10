@@ -5,8 +5,8 @@ This contract implements a simple DICE game between two players with 50/50 odds 
 
 Before playing all players deposit funds into their @dice account just like the @exchange contract
 
-1. Player 1 proposes to bet 1 eot and submits SHA256(secret1)
-2. Player 2 proposes to bet 1 eot and submits SHA256(secret2)
+1. Player 1 proposes to bet 1 EOTS and submits SHA256(secret1)
+2. Player 2 proposes to bet 1 EOTS and submits SHA256(secret2)
 
 Because Player 1 and 2 bet equal amounts their orders are matched and the game begins.
 
@@ -76,9 +76,9 @@ cleot create account eotio dice eot7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1
 cleot set contract dice build/contracts/dice -p dice
 ````
 
-##### Create native eot token
+##### Create native EOTS token
 ````bash
-cleot push action eotio.token create '[ "eotio", "1000000000.0000 eot", 0, 0, 0]' -p eotio.token
+cleot push action eotio.token create '[ "eotio", "1000000000.0000 EOTS", 0, 0, 0]' -p eotio.token
 ````
 
 ##### Create alice account
@@ -91,14 +91,14 @@ cleot create account eotio alice eot7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd
 cleot create account eotio bob eot7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4 eot7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4
 ````
 
-##### Issue 1000 eot to alice
+##### Issue 1000 EOTS to alice
 ````bash
-cleot push action eotio.token issue '[ "alice", "1000.0000 eot", "" ]' -p eotio
+cleot push action eotio.token issue '[ "alice", "1000.0000 EOTS", "" ]' -p eotio
 ````
 
-##### Issue 1000 eot to bob
+##### Issue 1000 EOTS to bob
 ````bash
-cleot push action eotio.token issue '[ "bob", "1000.0000 eot", "" ]' -p eotio
+cleot push action eotio.token issue '[ "bob", "1000.0000 EOTS", "" ]' -p eotio
 ````
 
 ##### Allow dice contract to make transfers on alice behalf (deposit)
@@ -111,14 +111,14 @@ cleot set account permission alice active '{"threshold": 1,"keys": [{"key": "eot
 cleot set account permission bob active '{"threshold": 1,"keys": [{"key": "eot7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4","weight": 1}],"accounts": [{"permission":{"actor":"dice","permission":"active"},"weight":1}]}' owner -p bob
 ````
 
-##### Alice deposits 100 eot into the dice contract
+##### Alice deposits 100 EOTS into the dice contract
 ````bash
-cleot push action dice deposit '[ "alice", "100.0000 eot" ]' -p alice
+cleot push action dice deposit '[ "alice", "100.0000 EOTS" ]' -p alice
 ````
 
-##### Bob deposits 100 eot into the dice contract
+##### Bob deposits 100 EOTS into the dice contract
 ````bash
-cleot push action dice deposit '[ "bob", "100.0000 eot" ]' -p bob
+cleot push action dice deposit '[ "bob", "100.0000 EOTS" ]' -p bob
 ````
 
 ##### Alice generates a secret
@@ -133,9 +133,9 @@ echo -n '28349b1d4bcdc9905e4ef9719019e55743c84efa0c5e9a0b077f0b54fcd84905' | xxd
 d533f24d6f28ddcef3f066474f7b8355383e485681ba8e793e037f5cf36e4883
 ````
 
-##### Alice bets 3 eot
+##### Alice bets 3 EOTS
 ````bash
-cleot push action dice offerbet '[ "3.0000 eot", "alice", "d533f24d6f28ddcef3f066474f7b8355383e485681ba8e793e037f5cf36e4883" ]' -p alice
+cleot push action dice offerbet '[ "3.0000 EOTS", "alice", "d533f24d6f28ddcef3f066474f7b8355383e485681ba8e793e037f5cf36e4883" ]' -p alice
 ````
 
 ##### Bob generates a secret
@@ -150,9 +150,9 @@ echo -n '15fe76d25e124b08feb835f12e00a879bd15666a33786e64b655891fba7d6c12' | xxd
 50ed53fcdaf27f88d51ea4e835b1055efe779bb87e6cfdff47d28c88ffb27129
 ````
 
-##### Bob also bets 3 eot (a game is started)
+##### Bob also bets 3 EOTS (a game is started)
 ````bash
-cleot push action dice offerbet '[ "3.0000 eot", "bob", "50ed53fcdaf27f88d51ea4e835b1055efe779bb87e6cfdff47d28c88ffb27129" ]' -p bob
+cleot push action dice offerbet '[ "3.0000 EOTS", "bob", "50ed53fcdaf27f88d51ea4e835b1055efe779bb87e6cfdff47d28c88ffb27129" ]' -p bob
 ````
 
 ##### Dice contract tables right after the game started
@@ -163,12 +163,12 @@ cleot get table dice dice account
 {
   "rows": [{
       "owner": "alice",
-      "eot_balance": "97.0000 eot",
+      "eot_balance": "97.0000 EOTS",
       "open_offers": 0,
       "open_games": 1
     },{
       "owner": "bob",
-      "eot_balance": "97.0000 eot",
+      "eot_balance": "97.0000 EOTS",
       "open_offers": 0,
       "open_games": 1
     }
@@ -184,7 +184,7 @@ cleot get table dice dice game
 {
   "rows": [{
       "id": 1,
-      "bet": "3.0000 eot",
+      "bet": "3.0000 EOTS",
       "deadline": "1970-01-01T00:00:00",
       "player1": {
         "commitment": "d533f24d6f28ddcef3f066474f7b8355383e485681ba8e793e037f5cf36e4883",
@@ -213,7 +213,7 @@ cleot get table dice dice game
 {
   "rows": [{
       "id": 1,
-      "bet": "3.0000 eot",
+      "bet": "3.0000 EOTS",
       "deadline": "2018-04-17T07:45:49",
       "player1": {
         "commitment": "d533f24d6f28ddcef3f066474f7b8355383e485681ba8e793e037f5cf36e4883",
@@ -242,12 +242,12 @@ cleot get table dice dice account
 {
   "rows": [{
       "owner": "alice",
-      "eot_balance": "103.0000 eot",
+      "eot_balance": "103.0000 EOTS",
       "open_offers": 0,
       "open_games": 0
     },{
       "owner": "bob",
-      "eot_balance": "97.0000 eot",
+      "eot_balance": "97.0000 EOTS",
       "open_offers": 0,
       "open_games": 0
     }
@@ -256,14 +256,14 @@ cleot get table dice dice account
 }
 ````
 
-##### Alice withdraw from her dice account 103 eot
+##### Alice withdraw from her dice account 103 EOTS
 ````bash
-cleot push action dice withdraw '[ "alice", "103.0000 eot" ]' -p alice
+cleot push action dice withdraw '[ "alice", "103.0000 EOTS" ]' -p alice
 ````
 
 ##### Balance of alice after withdraw
 ````bash
-cleot get currency balance eotio.token alice eot
-1003.0000 eot
+cleot get currency balance eotio.token alice EOTS
+1003.0000 EOTS
 ````
 

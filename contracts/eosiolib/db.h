@@ -1,6 +1,6 @@
 /**
  *  @file db.h
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  *  @brief Defines C API for interfacing with blockchain database
  */
 #pragma once
@@ -12,7 +12,7 @@ extern "C" {
  *  @brief APIs that store and retreive data on the blockchain
  *  @ingroup contractdev
  *
- *  eot.IO organizes data according to the following broad structure:
+ *  EOTS.IO organizes data according to the following broad structure:
  *
  *  - **code** - the account name which has write permission
  *     - **scope** - an account where the data is stored

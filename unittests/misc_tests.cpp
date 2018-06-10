@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #include <eotio/chain/chain_config.hpp>
 #include <eotio/chain/authority_checker.hpp>

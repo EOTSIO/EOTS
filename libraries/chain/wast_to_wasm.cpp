@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #include <eotio/chain/wast_to_wasm.hpp>
 #include <Inline/BasicTypes.h>

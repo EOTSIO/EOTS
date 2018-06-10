@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eot/LICENSE.txt
+ *  @copyright defined in EOTS/LICENSE.txt
  */
 #include <eotio/chain/eotio_contract.hpp>
 #include <eotio/chain/contract_table_objects.hpp>
